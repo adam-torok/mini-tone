@@ -1,30 +1,21 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
-    <SideBar></SideBar>
-    <Player></Player>
+    <transition>
+      <router-view 
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut">
+      </router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import SideBar from '@/components/SideBar.vue'
-import NavBar from '@/components/NavBar.vue'
-import Player from '@/components/Player.vue'
-
 export default {
   name: 'App',
-  components: {
-    SideBar,
-    NavBar,
-    Player
-  }
 }
 </script>
 
 <style>
-#app{
- 
-}
 body{
   background:#2d3748;
   background-size: cover;

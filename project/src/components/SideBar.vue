@@ -10,7 +10,6 @@
           <i class="fas fa-search p-2 bg-gray-800 rounded-full">
           </i>
         </span>
-     
     </div>
 </template>
 
@@ -22,8 +21,8 @@ export default {
 
 <style scoped>
     .sidebar{
-        position: relative;
-        left: -5%;
+        position: absolute;
+        left: -80px;
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .sidebar:hover{

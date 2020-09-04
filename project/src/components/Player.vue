@@ -3,7 +3,7 @@
 		<div class="player__box p-2 m-2 text-gray-700 bg-gray-900 rounded-lg shadow-lg">
 			<div class="flex player_inner">
 				<div>
-					<img class="player__album rounded hidden md:block" src="../storage/images/placeholder.png" alt="Album Pic">
+					<img class="player__album rounded hidden md:block" src="../storage/images/logo_transparent.png" alt="Album Pic">
 				</div>
 				<div class="w-full p-2">
 					<div class="flex justify-between">
@@ -45,7 +45,7 @@ export default {
 .player{
     width:100%;
     max-height: 150px;
-    position: relative;
+    position: sticky;
     bottom: 0;
 }
 .player_inner{
