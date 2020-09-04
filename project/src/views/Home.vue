@@ -5,10 +5,10 @@
     <SideBar></SideBar>
     <div class="song__holder">
       <div v-for="song in songs" :key="song.id">
-        <MusicCard :songs="song"></MusicCard>
+        <MusicCard @clicked="playSong" :song="song"></MusicCard>
       </div>
     </div>
-  <Player></Player>
+  <Player :currentSong="this.currentSong"></Player>
   </div>
 </template>
 
@@ -26,11 +26,18 @@ export default {
         NavBar,
         Player
     },
+    methods:{
+        playSong (song) {
+          this.currentSong = song;
+        }
+    },
     data(){
         return{
+            currentSong : '',
             songs:[
                 {name:'Artist',
-                artist:'artist'},
+                artist:'artist',
+                path: 'music.mp3'},
                 {name:'Artist2',
                 artist:'artist2'},
                 {name:'Artist3',

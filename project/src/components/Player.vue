@@ -8,8 +8,8 @@
 				<div class="w-full p-2">
 					<div class="flex justify-between">
 						<div>
-							<h3 class="text-grey-darkest font-medium">A Sky Full of Stars</h3>
-							<p class="text-sm text-grey mt-1">Ghost Stories</p>
+							<h3 class="text-grey-darkest font-medium">{{currentSong.name}}</h3>
+							<p class="text-sm text-grey mt-1">{{currentSong.artist}}</p>						
 						</div>
 					</div>
 					<div class="player__actions flex justify-between items-center mt-2">
@@ -20,10 +20,10 @@
 							<svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z"/></svg>
 						</div>
 						<div class="text-white p-3 rounded-full bg-red-light shadow-lg">
-							<svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>
+							<svg @click="playSong" class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>
 						</div>
 						<div class="text-grey-darker">
-							<svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z"/></svg>
+							<svg @click="pauseSong" class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z"/></svg>
 						</div>
 						<div class="text-grey-darker">
 							<svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4a2 2 0 0 0-2 2v6H0l4 4 4-4H5V6h7l2-2H5zm10 4h-3l4-4 4 4h-3v6a2 2 0 0 1-2 2H6l2-2h7V8z"/></svg>
@@ -32,12 +32,32 @@
 				</div>
 			</div>
 		</div>
+		<audio
+			preload="auto"
+			id="currentSong"
+			hidden
+			type="audio/mpeg">
+			<source :src="this.currentSong.path" type="audio/ogg">
+		</audio>
 	</div>
 </template>
 
 <script>
-export default {
 
+export default {
+props:['currentSong'],
+	methods:{
+		playSong(){
+			//let audio = document.querySelector("#currentSong");
+			//audio.play();
+			//console.log("playing");
+		},
+		pauseSong(){
+			//let audio = document.querySelector("#currentSong");
+			//audio.pause();
+			//console.log("paused");
+		}
+	}
 }
 </script>
 
