@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Loader></Loader>
     <NavBar></NavBar>
     <SideBar></SideBar>
     <div class="song__holder">
@@ -12,12 +13,14 @@
 </template>
 
 <script>
+import Loader from '@/components/Loader'
 import NavBar from '@/components/NavBar'
 import SideBar from '@/components/SideBar'
 import Player from '@/components/Player'
 import MusicCard from '@/components/MusicCard';
 export default {
     components:{
+        Loader,
         MusicCard,
         SideBar,
         NavBar,
@@ -54,5 +57,10 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .song__holder {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

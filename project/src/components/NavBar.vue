@@ -1,19 +1,18 @@
 <template>
- <div class="p-2 m-2 text-gray-700 bg-gray-900 rounded-lg shadow-lg ">
-        <span class="px-2 mr-2 border-r border-gray-800">
-          <img src="../storage/images/logo_transparent.png"
-            alt="MINI_TONE" class="navbar__logo inline mx-auto">
-        </span>
-        <span class="px-1 hover:text-white cursor-pointer">
-          <i class="fas fa-stream p-2 bg-gray-800 rounded-full">
-          </i>
-        </span>
+ <div class="navbar p-2 m-2 text-gray-700 bg-gray-900 rounded-lg shadow-lg">
+        <router-link to="/Home">
+          <span class="px-2 mr-2 border-r border-gray-800">
+            <img src="../storage/images/logo_transparent.png"
+              alt="MINI_TONE" class="navbar__logo inline mx-auto">
+          </span>
+        </router-link>
+        <router-link to="Profile">
+          <span class="px-1 hover:text-white cursor-pointer">
+          <i class="fas fa-user p-2 bg-gray-800 rounded-full"></i>
+          </span>
+        </router-link>
         <span class="px-1 hover:text-white cursor-pointer">
           <i class="fas fa-search p-2 bg-gray-800 rounded-full">
-          </i>
-        </span>
-        <span class="px-1 hover:text-white cursor-pointer">
-          <i class="fas fa-th p-2 bg-gray-800 rounded-full">
           </i>
         </span>
         <span class="px-1 hover:text-white cursor-pointer">
@@ -36,6 +35,10 @@ export default {
 </script>
 
 <style>
+.navbar{
+  position: sticky;
+  top: 1px;
+}
 .navbar__logo{
     width:3.5rem;
 }

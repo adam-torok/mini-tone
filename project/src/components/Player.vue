@@ -65,4 +65,9 @@ export default {
     width:250px;
     margin-left: 1rem;
 }
+@media only screen and (max-width: 600px) {
+	.player__album{
+		display: none;
+	}
+}
 </style>
